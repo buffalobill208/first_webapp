@@ -1,0 +1,10 @@
+Part 11 - Pagination
+    blog -> views.py
+    blog -> templates -> blog -> home.html (template that shows all the posts)
+    blog -> urls.py (create the path that contains the username parameter.)
+    
+    Create new list views with filtered queries and created a useful route
+    Create blog/templates/blog/user_posts.html
+        Also update post author line in the home.html & post-detail.html
+
+Part 12 - Email and Password Reset
