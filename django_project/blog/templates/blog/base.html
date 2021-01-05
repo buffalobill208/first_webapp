@@ -31,7 +31,7 @@
                   <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
                   <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
                 </div>
-                <!-- Navbar Right Side -->
+                <!-- Navbar Right Side-->
                 <div class="navbar-nav">
                   {% if user.is_authenticated %}
                      <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
@@ -58,6 +58,7 @@
               {% endif %}
               {% block content %}{% endblock %}
             </div>
+            <!-- Sidebar Right Side
             <div class="col-md-4">
               <div class="content-section">
                 <h3>Our Sidebar</h3>
@@ -70,6 +71,7 @@
                   </ul>
                 </p>
               </div>
+            -->
             </div>
           </div>
         </main>

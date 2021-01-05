@@ -2,9 +2,17 @@ Part 11 - Pagination
     blog -> views.py
     blog -> templates -> blog -> home.html (template that shows all the posts)
     blog -> urls.py (create the path that contains the username parameter.)
-    
+
     Create new list views with filtered queries and created a useful route
     Create blog/templates/blog/user_posts.html
         Also update post author line in the home.html & post-detail.html
 
 Part 12 - Email and Password Reset
+    django_project -> urls.py (create a route to a form to reset password)
+    Create password_reset.html template in the users my_app
+    users -> templates -> users -> password_reset.html
+    Create the page after the password form is submitted successfully.
+    Create a route that the email has been sent.
+        django_project -> urls.py ... password_reset_done.html
+    Create a password reset confirm route.
+        django_project -> urls.py ... create template, password_reset_confirm.html
