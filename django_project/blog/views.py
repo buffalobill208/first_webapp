@@ -1,6 +1,9 @@
+# python first
+# django second
+# your apps
+# local directory
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-# .models is in the same directory
 from django.contrib.auth.models import User
 from django.views.generic import (
     ListView,
@@ -9,7 +12,9 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post
+from django.core.mail import send_mail
+from django_project.settings import EMAIL_HOST_USER
+from .models import Post    # local directory
 
 
 # Create your views here.
@@ -54,6 +59,11 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        subject = 'A user has created a new post!'
+        message = 'http: // 127.0.0.1: 8000/'
+        recepient = EMAIL_HOST_USER
+        # Next is to add a link of the new post in the email message
+        send_mail(subject, message, EMAIL_HOST_USER, [recepient], fail_silently=False)
         return super().form_valid(form)
 
 

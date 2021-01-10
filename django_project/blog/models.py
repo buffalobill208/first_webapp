@@ -14,7 +14,7 @@ class Post(models.Model):
     # on_delete function deletes all related posts when a user is deleted.
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    # dunder or double underscore str method
+    # dunder or double underscore str method is a String representation of an object.  We can use this method to represent the Post titles.
     def __str__(self):
         return self.title
 
