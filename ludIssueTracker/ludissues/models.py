@@ -15,7 +15,7 @@ ISSUE_STATUS_CHOICES = (
 )
 
 OWNER_CHOICES = (
-    ('', ''),
+    ('unassigned', 'Unassigned'),
     ('randy', 'Randy'),
     ('casey', 'Casey'),
     ('pearse', 'Pearse'),
@@ -35,6 +35,12 @@ class Issue(models.Model):
 
     def name(self):
         return self.summary.split('\n', 1)[0]
+
+    def __str__(self):
+        return self.requestor
+
+    def __str__(self):
+        return self.owner
 
 # Admin front end for the app.  We are also configuring some of the built in attributes for the admin interface on how to display the list, how it will be sorted what are the search fields, etc.
 
